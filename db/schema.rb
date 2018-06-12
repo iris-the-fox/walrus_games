@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180612140059) do
+ActiveRecord::Schema.define(version: 20180612192847) do
 
   create_table "books", force: :cascade do |t|
     t.string   "autor"
@@ -33,8 +33,9 @@ ActiveRecord::Schema.define(version: 20180612140059) do
     t.string   "trailer"
     t.string   "platform"
     t.boolean  "wanna_play"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "year",         default: 2018
   end
 
   create_table "sommodels", force: :cascade do |t|
