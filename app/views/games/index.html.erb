@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Games</h1>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Name g</th>
+      <th>Developer</th>
+      <th>Release date</th>
+      <th>Genre</th>
+      <th>Description</th>
+      <th>Trailer</th>
+      <th>Platform</th>
+      <th>Wanna play</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @games.each do |game| %>
+      <<tr class=<%= cycle('even','odd') %>>
+        <td><%= game.name_g %></td>
+        <td><%= game.developer %></td>
+        <td><%= game.release_date %></td>
+        <td><%= game.genre %></td>
+        <td><%= game.description %></td>
+        <td><%= game.trailer %></td>
+        <td><%= game.platform %></td>
+        <td><%= game.wanna_play %></td>
+        <td><%= link_to 'Show', game %><%= link_to 'Edit', edit_game_path(game) %><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Game', new_game_path %>
