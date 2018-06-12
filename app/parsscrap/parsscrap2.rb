@@ -3,7 +3,7 @@ require 'nokogiri'
 require 'json'
 require_relative '../../config/environment'
 
-url = 'https://www.finder.com.au/e3-2018-ps4-games'
+url = 'https://www.finder.com.au/e3-2018-xbox-one-games'
 html = open(url)
 
 
@@ -28,7 +28,6 @@ end
 end
 =end
 
-Game.destroy_all
 
 games = []
 
@@ -41,11 +40,17 @@ doc.css('tr').each do |game|
     release_date = game.css("td")[2].text
     genre = game.css("td")[3].text
     description = game.css("td")[4].text
-  
     ff = game.css("td")[5].css("a")[0]["id"]
     trailer = "https://www.youtube.com/watch?v=#{ff}"
     
- 
+     
+    som=Game.where(:name_g => name_g).pluck(:name_g)
+
+    if som.include?(name_g)
+      puts "уже есть #{name_g}"
+      Game.find_by(:name_g => name_g).update(platform: "PlayStation 4, XBox One")
+    else
+      puts "новое #{name_g}"
       games.push(
         name_g: name_g,
         developer: developer,
@@ -54,15 +59,20 @@ doc.css('tr').each do |game|
         description: description,
         trailer: trailer)
 
+    end
+
   end
 end
+
+=begin
 puts "___"
 puts games[0]
 puts games[0][:name_g]
 puts games[0][:trailer]
-
+=end
 
 games.each do |i|
-  Game.create(name_g:i[:name_g], developer:i[:developer], release_date:i[:release_date], genre:i[:genre], description:i[:description], trailer:i[:trailer], platform:"PlayStation 4", wanna_play:true)
+  Game.create(name_g:i[:name_g], developer:i[:developer], release_date:i[:release_date], genre:i[:genre], description:i[:description], trailer:i[:trailer], platform:"Xbox One", wanna_play:true)
 end
+
 
