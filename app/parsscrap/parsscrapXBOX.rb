@@ -45,12 +45,15 @@ doc.css('tr').each do |game|
     
      
     som = Game.where(:name_g => name_g).pluck(:name_g)
+    
 
    
 
     if som.include?(name_g)
       puts "уже есть #{name_g}"
       Game.find_by(:name_g => name_g).update(platform: "PlayStation 4, Xbox One")
+      Game.find_by(:name_g => name_g).update(release_date_Xbox: release_date)
+
     else
       puts "новое #{name_g}"
       games.push(
@@ -74,7 +77,7 @@ puts games[0][:platform]
 
 =end
 games.each do |i|
-  Game.create(name_g:i[:name_g], developer:i[:developer], release_date:i[:release_date], genre:i[:genre], description:i[:description], trailer:i[:trailer], platform:"Xbox One", wanna_play:true)
+  Game.create(name_g:i[:name_g], developer:i[:developer], release_date_Xbox:i[:release_date], genre:i[:genre], description:i[:description], trailer:i[:trailer], platform:"Xbox One", wanna_play:true)
 end
 
 

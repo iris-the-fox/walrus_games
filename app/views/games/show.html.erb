@@ -16,7 +16,7 @@
 
 <p>
   <strong>Expected release date:</strong>
-  <%= @game.release_date %>
+  <%= release_date(@game) %>
 </p>
 
 <p>
@@ -31,12 +31,17 @@
 
 <p>
   <strong>Trailer:</strong>
-  <%= @game.trailer %>
+  <%= link_to "Watch trailer", @game.trailer, :target => "_blank" %>
 </p>
 
 <p>
   <strong>Platform:</strong>
   <%= @game.platform %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @game.note %>
 </p>
 
 <p>

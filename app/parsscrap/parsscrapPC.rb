@@ -48,6 +48,7 @@ doc.css('tr').each do |game|
     somels=Game.where(:name_g => name_g).pluck(:platform)
 
     if som.include?(name_g)
+      Game.find_by(:name_g => name_g).update(release_date_PC: release_date)
       
       if somels.include?("PlayStation 4, Xbox One")
         puts "уже есть в двух платформах #{name_g}"
@@ -86,7 +87,7 @@ puts games[0][:trailer]
 =end
 
 games.each do |i|
-  Game.create(name_g:i[:name_g], developer:i[:developer], release_date:i[:release_date], genre:i[:genre], description:i[:description], trailer:i[:trailer], platform:"PC", wanna_play:true)
+  Game.create(name_g:i[:name_g], developer:i[:developer], release_date_PC:i[:release_date], genre:i[:genre], description:i[:description], trailer:i[:trailer], platform:"PC", wanna_play:true)
 end
 
 

@@ -28,7 +28,7 @@ end
 end
 =end
 
-Game.destroy_all
+#Game.destroy_all
 
 games = []
 
@@ -63,6 +63,6 @@ puts games[0][:trailer]
 
 
 games.each do |i|
-  Game.create(name_g:i[:name_g], developer:i[:developer], release_date:i[:release_date], genre:i[:genre], description:i[:description], trailer:i[:trailer], platform:"PlayStation 4", wanna_play:true)
+  Game.create(name_g:i[:name_g], developer:i[:developer], release_date_PS4:i[:release_date], genre:i[:genre], description:i[:description], trailer:i[:trailer], platform:"PlayStation 4", wanna_play:true)
 end
 

@@ -14,11 +14,15 @@
       <th>Description</th>
       <th>Trailer</th>
       <th>Platform</th>
+      <th>Note</th>
       <th>Wanna play</th>
       <th></th>
     </tr>
   </thead>
   <% a=0 %>
+  
+
+
   <tbody>
     <% @games.each do |game| %>
       <tr class=<%= cycle('even','odd') %>>
@@ -26,13 +30,14 @@
         <td><%= game.name_g %></td>
         <td><%= game.developer %></td>
         <td><%= game.date_added %></td>
-        <td><%= game.release_date %></td>
+        <td><%= release_date(game) %></td>
         <td><%= game.genre %></td>
         <td><%= game.description %></td>
         <td><%= link_to "Watch trailer", game.trailer, :target => "_blank" %></td>
         <td><%= game.platform %></td>
+        <td><%= game.note %></td>
         <td><%= game.wanna_play %></td>
-        <td><%= link_to 'Show', game %>  <%= link_to 'Edit', edit_game_path(game) %>  <%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', game %>  <%= link_to 'Edit', edit_game_path(game) %>  <%# link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

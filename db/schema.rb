@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180612194558) do
+ActiveRecord::Schema.define(version: 20180613112042) do
 
   create_table "books", force: :cascade do |t|
     t.string   "autor"
@@ -27,15 +27,19 @@ ActiveRecord::Schema.define(version: 20180612194558) do
   create_table "games", force: :cascade do |t|
     t.string   "name_g"
     t.string   "developer"
-    t.string   "release_date"
     t.string   "genre"
     t.string   "description"
     t.string   "trailer"
     t.string   "platform"
     t.boolean  "wanna_play"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.date     "date_added",   default: '2018-06-12'
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+    t.date     "date_added",        default: '2018-06-12'
+    t.string   "release_date_PS4"
+    t.string   "release_date_Xbox"
+    t.string   "release_date_PC"
+    t.string   "release_date_NS"
+    t.string   "note"
   end
 
   create_table "sommodels", force: :cascade do |t|

@@ -12,17 +12,37 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name_g %><br>
+    <%= f.label "Game" %><br>
     <%= f.text_field :name_g %>
   </div>
+
   <div class="field">
     <%= f.label :developer %><br>
     <%= f.text_field :developer %>
   </div>
+
+  <%#<div class="field">%>
+    <%#<%= f.label :release_date %>
+    <%#<%= f.text_field :release_date %>
+  <%#</div>%>
+
   <div class="field">
-    <%= f.label :release_date %><br>
-    <%= f.text_field :release_date %>
+    <%= f.label "rel d PS4" %>
+    <%= f.text_field :release_date_PS4 %>
   </div>
+<div class="field">
+    <%= f.label "rel d Xbox" %>
+    <%= f.text_field :release_date_Xbox %>
+  </div>
+  <div class="field">
+    <%= f.label "rel d PC" %>
+    <%= f.text_field :release_date_PC %>
+  </div>
+  <div class="field">
+    <%= f.label "rel d NS" %>
+    <%= f.text_field :release_date_NS %>
+  </div>
+
   <div class="field">
     <%= f.label :genre %><br>
     <%= f.text_field :genre %>
@@ -40,9 +60,15 @@
     <%= f.text_field :platform %>
   </div>
   <div class="field">
+    <%= f.label :note %><br>
+    <%= f.text_field :note %>
+  </div>
+
+  <div class="field">
     <%= f.label :wanna_play %><br>
     <%= f.check_box :wanna_play %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
