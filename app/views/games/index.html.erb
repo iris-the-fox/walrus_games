@@ -2,13 +2,13 @@
 
 <h1>Listing Games</h1>
 
-<table border="1">
+<table>
   <thead>
     <tr>
       <th>№</th>
       <th>Name</th>
       <th>Developer</th>
-      <th>Added date</th>
+      <%#<th>Added date</th>%>
       <th>Expected release date</th>
       <th>Genre</th>
       <th>Description</th>
@@ -26,10 +26,10 @@
   <tbody>
     <% @games.each do |game| %>
       <tr class=<%= cycle('even','odd') %>>
-        <td><%= a+=1 %></td>
-        <td><%= game.name_g %></td>
+        <td class=npp><%= a+=1 %></td>
+        <td class=gamename><%= game.name_g %></td>
         <td><%= game.developer %></td>
-        <td><%= game.date_added %></td>
+        <%#<td><%= game.date_added </td>%>
         <td><%= release_date(game) %></td>
         <td><%= game.genre %></td>
         <td><%= game.description %></td>

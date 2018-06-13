@@ -1,14 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <h1>
-  <strong>Game Name:</strong>
-  <%= @game.name_g %>
+   <%= @game.name_g %>
 </h1>
+
+<p>
+
+<%= image_tag(get_image(@game.trailer))%>
+</p>
 
 <p>
   <strong>Developer:</strong>
   <%= @game.developer %>
 </p>
+
 <p>
   <strong>Added date:</strong>
   <%= @game.date_added %>

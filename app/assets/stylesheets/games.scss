@@ -2,16 +2,37 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+h1 {
+	text-align: center;
+}
+
 table {
+    font-family: Verdana, sans-serif;
     border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
 }
 
 
 td{
 	padding: 10px;
-
 }
 
 .even {
-	background-color: #D6E1C3;
+	background-color: #87CEFA;
+}
+
+.odd {
+	background-color: #F0F8FF;
+}
+
+.gamename {
+	text-align: center;
+	font-size: 1.2em;
+}
+
+.npp {
+	text-align: center;
 }

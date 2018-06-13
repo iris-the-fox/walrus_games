@@ -1,3 +1,10 @@
+require 'open-uri'
+require 'nokogiri'
+require 'json'
+require_relative '../../config/environment'
+
+    
+
 module GamesHelper
 
   def release_date(i)
@@ -14,5 +21,28 @@ module GamesHelper
      end
  end
 
+def get_image(someurl)
+    url = someurl
+    html = open(url)
+    doc = Nokogiri::HTML(html)
+
+    images=[]
+    doc.css('div').each do |i|
+      i.css('img').each do |k|
+    #puts k["data-thumb"]
+    #puts k.class
+      images.push (k["data-thumb"] )
+      end
+    end
+    @image=images[1]
+    
+  end
 
 end
+
+
+
+  
+
+
+
