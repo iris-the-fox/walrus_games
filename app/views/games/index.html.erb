@@ -5,7 +5,8 @@
 <table border="1">
   <thead>
     <tr>
-      <th>Name g</th>
+      <th>№</th>
+      <th>Name</th>
       <th>Developer</th>
       <th>Added date</th>
       <th>Expected release date</th>
@@ -17,10 +18,11 @@
       <th></th>
     </tr>
   </thead>
-
+  <% a=0 %>
   <tbody>
     <% @games.each do |game| %>
-      <<tr class=<%= cycle('even','odd') %>>
+      <tr class=<%= cycle('even','odd') %>>
+        <td><%= a+=1 %></td>
         <td><%= game.name_g %></td>
         <td><%= game.developer %></td>
         <td><%= game.date_added %></td>
