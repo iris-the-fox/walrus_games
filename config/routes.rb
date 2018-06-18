@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  
+  resources :releases
+  root 'canopener#open_games'
+
   resources :games
   resources :books
   #root 'books#index'

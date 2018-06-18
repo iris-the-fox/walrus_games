@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180613112042) do
+ActiveRecord::Schema.define(version: 20180618191957) do
 
   create_table "books", force: :cascade do |t|
     t.string   "autor"
@@ -41,6 +41,18 @@ ActiveRecord::Schema.define(version: 20180613112042) do
     t.string   "release_date_NS"
     t.string   "note"
   end
+
+  create_table "releases", force: :cascade do |t|
+    t.string   "game_n"
+    t.date     "date"
+    t.string   "platform"
+    t.string   "note"
+    t.integer  "game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "releases", ["game_id"], name: "index_releases_on_game_id"
 
   create_table "sommodels", force: :cascade do |t|
     t.string   "first_col"
