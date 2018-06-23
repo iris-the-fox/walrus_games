@@ -16,14 +16,16 @@
 </p>
 
 <p>
+  <strong>Link:</strong>
+  <%= @release.link %>
+</p>
+
+<p>
   <strong>Note:</strong>
   <%= @release.note %>
 </p>
 
-<p>
-  <strong>Game:</strong>
-  <%= @release.game %>
-</p>
+
 
 <%= link_to 'Edit', edit_release_path(@release) %> |
 <%= link_to 'Back', releases_path %>

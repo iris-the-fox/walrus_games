@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180618191957) do
+ActiveRecord::Schema.define(version: 20180623132929) do
 
   create_table "books", force: :cascade do |t|
     t.string   "autor"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20180618191957) do
     t.integer  "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "link"
   end
 
   add_index "releases", ["game_id"], name: "index_releases_on_game_id"
