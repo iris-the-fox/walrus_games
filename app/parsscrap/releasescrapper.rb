@@ -11,7 +11,7 @@ html = open(url)
 doc = Nokogiri::HTML(html)
 
 
-
+Release.destroy_all
 
 
 =begin
@@ -71,10 +71,11 @@ doc.css("table.table-games-list-3-columns").css("tr").each do |row|
                 puts name_g
                 puts link
                 #puts platform.class
+                
                 releases.push(
+                name_g: name_g,
                 platform: platform,
                 date: date,
-                name_g: name_g,
                 link: link)
               end
         
@@ -96,9 +97,21 @@ end
  # puts platform = platform.join(", ")
 puts releases[60]
 
-
+releases = releases.uniq
 releases.each do |i|
-  
+  check_match = Game.where(name_g:i[:name_g])
 
-  Release.create(game_n:i[:name_g], date:i[:date], link:i[:link], platform:i[:platform])
+  if check_match.first.nil? 
+    Release.create(game_n:i[:name_g], date:i[:date], link:i[:link], platform:i[:platform])
+    puts "Ждём"
+  else
+    foreign_key = check_match.pluck(:id)
+    puts "вышло"
+    puts foreign_key = foreign_key.join.to_i
+    r = Release.create(game_n:i[:name_g], date:i[:date], link:i[:link], platform:i[:platform], game_id:foreign_key)
+    puts r.game_id
+    
+
+  end
+    
 end

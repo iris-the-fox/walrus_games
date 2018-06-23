@@ -10,6 +10,7 @@
       <th>Developer</th>
       <%#<th>Added date</th>%>
       <th>Expected release date</th>
+      <th>Actual release date</th>
       <th>Genre</th>
       <th>Description</th>
       <th>Trailer</th>
@@ -31,6 +32,9 @@
         <td><%= game.developer %></td>
         <%#<td><%= game.date_added </td>%>
         <td><%= release_date(game) %></td>
+        <td><%= game.release.nil? ? "Ждём" : game.release.date %></td>
+
+
         <td><%= game.genre %></td>
         <td><%= game.description %></td>
         <td><%= link_to "Watch trailer", game.trailer, :target => "_blank" %></td>
