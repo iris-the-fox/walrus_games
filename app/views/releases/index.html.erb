@@ -23,12 +23,15 @@
         <td><%= release.date %></td>
         <td><%= release.game_id %></td>
         <td><%= release.platform %></td>
-        <td><%= release.link %></td>
+        <td><%url = "http://ru.riotpixels.com/#{release.link}"%>
+          <%= link_to(release.game_n, url, target: "blank") %>
+          
+        </td>
         <td><%= release.note %></td>
        
         <td><%= link_to 'Show', release %> 
           <%= link_to 'Edit', edit_release_path(release) %>
-        <%= link_to 'Destroy', release, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </td>
       </tr>
     <% end %>
   </tbody>

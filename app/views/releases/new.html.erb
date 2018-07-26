@@ -1,5 +1,28 @@
 <h1>New Release</h1>
-
+<p>Добавить вручную</p>
 <%= render 'form' %>
 
 <%= link_to 'Back', releases_path %>
+
+<p>Добавить с сайта</p>
+<%= form_for(@release) do |f| %>
+  <% if @release.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@release.errors.count, "error") %> prohibited this release from being saved:</h2>
+
+      <ul>
+      <% @release.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :game_n %><br>
+    <%= f.text_field :game_n %>
+  </div>
+   <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
