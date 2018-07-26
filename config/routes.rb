@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
-  
+  resources :sessions, only: [:new, :create, :destroy]
+  root to: 'games#index'
   resources :releases
-  root 'canopener#open_games'
-
   resources :games
-  resources :books
+
+  get "/login" => "sessions#new", as: "login"
+  delete "/logout" => "sessions#destroy", as: "logout"
+
+
+
+
+
   #root 'books#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

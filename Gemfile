@@ -13,6 +13,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 gem 'web-console', '~> 2.0', group: :development
+gem 'will_paginate', '~>3.0.6'
 
 group :development, :test do
   gem 'byebug'

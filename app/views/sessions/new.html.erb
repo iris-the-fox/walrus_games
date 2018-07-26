@@ -1,0 +1,41 @@
+<body class="gray">
+<div class="container">
+  <div class="row">
+    <div class="col">
+      
+    </div>
+    <div class="col-8">
+   
+      <h1>Welcome to...</h1>
+      <%= image_tag('cover.jpg', width: "100%")%>
+  
+    </div>
+    
+    <div class="col-2">
+      <%= form_for(:user, url: sessions_path) do |f| %>
+        <div class="field">
+          <%= f.label :username %> <br/> 
+          <%= f.text_field :username %>
+        </div>
+    
+        <div class="field">
+          <%= f.label :password %> <br/> 
+          <%= f.password_field :password %>
+        </div>
+    
+        <div >
+          <%= f.submit "Login", class: "button28" %>
+        </div>
+        <% end %>
+    </div>
+  </div>
+</div>
+</body>
+
+
+
+
+
+
+
+
