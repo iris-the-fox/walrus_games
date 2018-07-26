@@ -13,3 +13,30 @@
  *= require_tree .
  *= require_self
  */
+.digg_pagination {
+  
+  background: white;
+  cursor: default;
+  /* self-clearing method: */ }
+  .digg_pagination a, .digg_pagination span, .digg_pagination em {
+    padding: 0.2em 0.5em;
+    display: block;
+    float: left;
+    margin-right: 1px; }
+  .digg_pagination .disabled {
+    color: #999999;
+    border: 1px solid #dddddd; }
+  .digg_pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    background: #61b4e8;
+    color: white;
+    border: 1px solid #61b4e8; }
+  .digg_pagination a {
+    text-decoration: none;
+    color: #61b4e8;
+    border: 1px solid #61b4e8; }
+    .digg_pagination a:hover, .digg_pagination a:focus {
+      color: #61b4e8;
+      border-color: #61b4e8; }
+  

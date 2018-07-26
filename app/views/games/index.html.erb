@@ -1,7 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Games</h1>
-
+<%= will_paginate @games, class: "digg_pagination" %>
+<br>
 <table>
   <thead>
     <tr>
@@ -46,7 +47,9 @@
     <% end %>
   </tbody>
 </table>
-<%= will_paginate @games %>
+<br>
+<%= will_paginate @games, class: "digg_pagination" %>
 <br>
 
 <%= link_to 'New Game', new_game_path %>
+<%= link_to 'Watch list of releases', releases_path %>
