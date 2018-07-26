@@ -42,13 +42,17 @@ div {
 #notice {
   color: green;
 }
-
+#alert {
+  color: red;
+}
 .field_with_errors {
   padding: 2px;
   background-color: red;
   display: table;
 }
-
+#notice, #alert {
+  text-align: center
+}
 #error_explanation {
   width: 450px;
   border: 2px solid red;

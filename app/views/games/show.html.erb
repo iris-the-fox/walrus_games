@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 
 <h1>
    <%= @game.name_g %>
@@ -30,7 +30,7 @@
 
 <p>
   <strong>Actual release date:</strong>
-  <%= release_date(@game) %>
+  <%= @game.release.nil? ? "Ждём" : @game.release.date %>
 </p>
 
 <p>
