@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>№</th>
+     <%# <th>№</th>%>
       <th>Name</th>
       <th>Developer</th>
       <%#<th>Added date</th>%>
@@ -27,7 +27,7 @@
   <tbody>
     <% @games.each do |game| %>
       <tr class=<%= cycle('even','odd') %>>
-        <td class=npp><%= a+=1 %></td>
+       <%# <td class=npp><%= a+=1 </td>%>
         <td class=gamename><%= game.name_g %></td>
         <td><%= game.developer %></td>
         <%#<td><%= game.date_added </td>%>
@@ -46,7 +46,7 @@
     <% end %>
   </tbody>
 </table>
-
+<%= will_paginate @games %>
 <br>
 
 <%= link_to 'New Game', new_game_path %>
