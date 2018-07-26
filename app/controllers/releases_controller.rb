@@ -4,7 +4,7 @@ class ReleasesController < ApplicationController
   # GET /releases
   # GET /releases.json
   def index
-    @releases = Release.all
+    @releases = Release.all.paginate(page: params[:page], per_page: 15)
   end
 
   # GET /releases/1

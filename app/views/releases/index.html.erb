@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Releases</h1>
+<h1>Releases</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Game n</th>
+      <th>Game</th>
       <th>Date</th>
-      <th>Connect to</th>
-      <th>Platform</th>
+      <th>Connected to</th>
+      <th class="dont_be_huge">Platform</th>
       <th>External link</th>
       <th>Note</th>
     
@@ -18,11 +18,12 @@
 
   <tbody>
     <% @releases.each do |release| %>
-      <tr>
+      <tr class=<%= cycle('even','odd') %>>
+       
         <td><%= release.game_n %></td>
         <td><%= release.date %></td>
         <td><%= release.game_id %></td>
-        <td><%= release.platform %></td>
+        <td class="dont_be_huge"><%= release.platform %></td>
         <td><%url = "http://ru.riotpixels.com/#{release.link}"%>
           <%= link_to(release.game_n, url, target: "blank") %>
           
@@ -36,7 +37,9 @@
     <% end %>
   </tbody>
 </table>
-
+<br>
+<%= will_paginate @releases, class: "digg_pagination" %>
 <br>
 
-<%= link_to 'New Release', new_release_path %>
+<%= link_to 'New Release', new_release_path %> |
+<%= link_to 'Back to games list', games_path %>

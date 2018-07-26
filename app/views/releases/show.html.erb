@@ -1,9 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Game n:</strong>
-  <%= @release.game_n %>
-</p>
+<h1>
+   <%= @release.game_n %>
+</h1>
 
 <p>
   <strong>Date:</strong>
@@ -17,7 +16,8 @@
 
 <p>
   <strong>Link:</strong>
-  <%= @release.link %>
+  <%url = "http://ru.riotpixels.com/#{@release.link}"%>
+          <%= link_to(@release.game_n, url, target: "blank") %>
 </p>
 
 <p>
