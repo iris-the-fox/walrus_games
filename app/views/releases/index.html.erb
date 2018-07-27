@@ -20,7 +20,7 @@
       <tr class=<%= cycle('even','odd') %>>
        
         <td><%= release.game_n %></td>
-        <td><%= release.date %></td>
+        <td><%= release.date.to_formatted_s(:rfc822)    %></td>
         <td><%= release.game_id %></td>
         <td class="dont_be_huge"><%= release.platform %></td>
         <td><%url = "http://ru.riotpixels.com/#{release.link}"%>

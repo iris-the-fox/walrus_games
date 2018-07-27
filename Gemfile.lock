@@ -92,7 +92,7 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.11.3)
     multi_json (1.13.1)
-    nokogiri (1.8.2)
+    nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
     phantomjs (1.9.8.0)
     poltergeist (1.6.0)
@@ -211,6 +211,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   minitest
+  nokogiri (~> 1.8.4)
   phantomjs (~> 1.9.8.0)
   poltergeist (~> 1.6.0)
   rails (= 4.2.8)
