@@ -11,18 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180726101044) do
-
-  create_table "books", force: :cascade do |t|
-    t.string   "autor"
-    t.string   "name",         limit: 10
-    t.integer  "year"
-    t.string   "genre"
-    t.integer  "reading_time"
-    t.integer  "rate"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-  end
+ActiveRecord::Schema.define(version: 20180731120502) do
 
   create_table "games", force: :cascade do |t|
     t.string   "name_g"
@@ -54,13 +43,6 @@ ActiveRecord::Schema.define(version: 20180726101044) do
   end
 
   add_index "releases", ["game_id"], name: "index_releases_on_game_id"
-
-  create_table "sommodels", force: :cascade do |t|
-    t.string   "first_col"
-    t.string   "second_col"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
