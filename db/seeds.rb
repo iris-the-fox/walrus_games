@@ -20,6 +20,26 @@ def hashing(string)
   else
     h = {:game_n => a[0], :date => a[1],  :link => a[2], :platform => a[6], :note => 'addon'} 
   end
+end
+
+def hashing_game(string)
+  a = string.split("||")
+    h = {
+      :name_g => a[0],:developer => a[1],:release_date_PS4 => a[2],:release_date_NS => a[3],:release_date_PC => a[4],
+      :release_date_Xbox => a[5],:genre => a[6],:description => a[7],:trailer => a[8],:platform => a[9]
+      }
+end
+
+Game.destroy_all
+
+games = File.open('games.txt', "r").each do |line| 
+  
+  h = hashing_game(line)
+  g = Game.create(
+      name_g:h[:name_g],developer:h[:developer],release_date_PS4:h[:release_date_PS4],
+      release_date_NS:h[:release_date_NS], release_date_PC:h[:release_date_PC],
+      release_date_Xbox:h[:release_date_Xbox],genre:h[:genre], description:h[:description],
+      trailer:h[:trailer],platform:h[:platform])
 
 end
 

@@ -1,7 +1,7 @@
 require 'open-uri'
 require 'nokogiri'
 require 'json'
- require_relative '../../config/environment'
+require_relative '../../config/environment'
 require_relative './right_date'
 
 url = 'http://ru.riotpixels.com/games/filter/recent/page-2/'
