@@ -16,9 +16,9 @@
  .dont_be_huge {
   max-width: 200px;
  }
+
 .digg_pagination {
-  
-  background: white;
+   background: white;
   cursor: default;
   /* self-clearing method: */ }
   .digg_pagination a, .digg_pagination span, .digg_pagination em {
@@ -32,16 +32,16 @@
   .digg_pagination .current {
     font-style: normal;
     font-weight: bold;
-    background: #61b4e8;
+    background: #68bab8;
     color: white;
-    border: 1px solid #61b4e8; }
+    border: 1px solid #68bab8; }
   .digg_pagination a {
     text-decoration: none;
-    color: #61b4e8;
-    border: 1px solid #61b4e8; }
+    color: #68bab8;
+    border: 1px solid #68bab8; }
     .digg_pagination a:hover, .digg_pagination a:focus {
-      color: #61b4e8;
-      border-color: #61b4e8; }
+      color: #68bab8;
+      border-color: #68bab8; }
   
 h1 {
   text-align: center;

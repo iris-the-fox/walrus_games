@@ -7,9 +7,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<% if logged_in? %>
+<ul>
+  <li><%= link_to("Games", root_path) %></li>
+  <li><%= link_to("Releases", releases_path) %></li>
+ <%# <li><%= link_to("My cabinet", ) </li>%>
+  <li><%= link_to "Logout",  logout_path, method: :delete %></li>
+</ul>
+
+<% end %>
+
 <p id="notice"><%= notice %></p>
 <p id="alert"><%= alert %></p>
+
 <%= yield %>
+
 <% if logged_in? %>
   <div style='float: right;'>
     Logged in as <%= current_user.username %> |
